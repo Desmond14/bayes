@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile version="1.0" id="Network1" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="Krakow">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.02 0.98</probabilities>
+		</cpt>
+		<cpt id="Warszawa">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.04 0.96</probabilities>
+		</cpt>
+		<cpt id="Wroclaw">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.016 0.984</probabilities>
+		</cpt>
+		<cpt id="Poznan">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.014 0.986</probabilities>
+		</cpt>
+		<cpt id="Zakopane">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.001 0.999</probabilities>
+		</cpt>
+		<cpt id="Rzeszow">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.004 0.996</probabilities>
+		</cpt>
+		<cpt id="Mieszkasz_w_miescie">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Krakow Zakopane Warszawa Wroclaw Poznan Rzeszow</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.074 0.9260000000000001 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.002 0.998 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.074 0.9260000000000001 0.5 0.5 0.5 0.5 0.5 0.5 0.027 0.973 0.5 0.5 0.023 0.977 0.008 0.992 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Komunikacja_zbiorowa">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Mieszkasz_w_miescie</parents>
+			<probabilities>0.72 0.28 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Mieszkasz_na_poludniu_Polski">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Krakow Zakopane Rzeszow</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.054 0.946 0.5 0.5 0.002 0.998 0.013 0.987 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Chodzi_do_pracy_pieszo">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Mieszkasz_w_miescie</parents>
+			<probabilities>0.75 0.25 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Jezdzi_do_pracy_autem">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Mieszkasz_w_miescie</parents>
+			<probabilities>0.51 0.49 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Jezdzi_do_pracy_rowerem">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Mieszkasz_w_miescie</parents>
+			<probabilities>0.92 0.07999999999999996 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Mieszkasz_na_zachodzie_Polski">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Wroclaw Poznan</parents>
+			<probabilities>0.5 0.5 0.06 0.94 0.07000000000000001 0.9299999999999999 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Czytasz_wiecej_niz_12_ksiazek_rocznie">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Komunikacja_zbiorowa</parents>
+			<probabilities>0.8 0.2 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Jezdzisz_w_gory_conajmniej_5_razy_w_roku">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Mieszkasz_na_poludniu_Polski</parents>
+			<probabilities>0.65 0.35 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Regularnie_chodzi_do_kosciola">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Mieszkasz_na_poludniu_Polski Mieszkasz_na_zachodzie_Polski</parents>
+			<probabilities>0.5 0.5 0.65 0.35 0.39 0.61 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Jako_drugi_jezyk_obcy_znasz_niemiecki">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Mieszkasz_na_zachodzie_Polski</parents>
+			<probabilities>0.53 0.47 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Mieszkasz_w_budynku_sprzed_1918_roku">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Mieszkasz_na_zachodzie_Polski</parents>
+			<probabilities>0.65 0.35 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="W_Twojej_miejscowosci_jest_zoo">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Warszawa Krakow Wroclaw Poznan</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.28 0.72 0.5 0.5 0.5 0.5 0.5 0.5 0.13 0.87 0.5 0.5 0.11 0.89 0.09 0.91 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="W_Twojej_miejscowosci_jest_skocznia_narciarska">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Zakopane</parents>
+			<probabilities>0.6 0.4 0.5 0.5</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.0.5590.0" name="Network1" faultnameformat="nodestate">
+			<node id="Krakow">
+				<name>Mieszkasz w Krakowie</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>485 171 585 244</position>
+			</node>
+			<node id="Warszawa">
+				<name>Mieszkasz w Warszawie</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>333 172 431 241</position>
+			</node>
+			<node id="Wroclaw">
+				<name>Mieszkasz we Wroclawiu</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>938 177 1034 245</position>
+			</node>
+			<node id="Poznan">
+				<name>Mieszkasz w Poznaniu</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1110 182 1205 241</position>
+			</node>
+			<node id="Zakopane">
+				<name>Mieszkasz w Zakopanem</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>630 175 728 243</position>
+			</node>
+			<node id="Mieszkasz_w_miescie">
+				<name>Mieszkasz w miescie</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>568 395 660 443</position>
+			</node>
+			<node id="Rzeszow">
+				<name>Mieszkasz w Rzeszowie</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>784 178 881 238</position>
+			</node>
+			<node id="Komunikacja_zbiorowa">
+				<name>Dojezdza do pracy komunikacja zbiorowa</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>558 579 679 654</position>
+			</node>
+			<node id="Chodzi_do_pracy_pieszo">
+				<name>Chodzi do pracy pieszo</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>729 589 835 653</position>
+			</node>
+			<node id="Jezdzi_do_pracy_autem">
+				<name>Jezdzi do pracy autem</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>405 582 515 643</position>
+			</node>
+			<node id="Jezdzi_do_pracy_rowerem">
+				<name>Jezdzi do pracy rowerem</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>256 586 348 643</position>
+			</node>
+			<node id="Mieszkasz_na_poludniu_Polski">
+				<name>Mieszkasz na poludniu Polski</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>934 487 1039 552</position>
+			</node>
+			<node id="Mieszkasz_na_zachodzie_Polski">
+				<name>Mieszkasz na zachodzie Polski</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1147 489 1252 554</position>
+			</node>
+			<node id="Czytasz_wiecej_niz_12_ksiazek_rocznie">
+				<name>Czytasz wiecej niz 12 ksiazek rocznie</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>562 742 672 810</position>
+			</node>
+			<node id="Jezdzisz_w_gory_conajmniej_5_razy_w_roku">
+				<name>Jezdzisz w gory conajmniej 5 razy w roku</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>872 674 982 742</position>
+			</node>
+			<node id="Regularnie_chodzi_do_kosciola">
+				<name>Regularnie chodzi do kosciola</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1045 681 1148 742</position>
+			</node>
+			<node id="Jako_drugi_jezyk_obcy_znasz_niemiecki">
+				<name>Jako drugi jezyk obcy znasz niemiecki</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1242 676 1354 746</position>
+			</node>
+			<node id="Mieszkasz_w_budynku_sprzed_1918_roku">
+				<name>Mieszkasz w budynku sprzed 1918 roku</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1425 671 1538 741</position>
+			</node>
+			<node id="W_Twojej_miejscowosci_jest_zoo">
+				<name>W Twojej miejscowosci jest zoo</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>217 427 322 492</position>
+			</node>
+			<node id="W_Twojej_miejscowosci_jest_skocznia_narciarska">
+				<name>W Twojej miejscowosci jest skocznia narciarska</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>734 450 869 534</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>
