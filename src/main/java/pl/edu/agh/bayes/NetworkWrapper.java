@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class NetworkWrapper {
+    private static final String HYPOTHESIS_NODE_NAME = "Gdzie_mieszkasz_";
     private static final String TRUE_VALUE_MARKER = "Yes";
     private static final String FALSE_VALUE_MARKER = "No";
     private final Network network;
@@ -39,26 +40,25 @@ public class NetworkWrapper {
     public Map<Hypothesis, Double> getAllHypothesisProbabilities() {
         Map<Hypothesis, Double> probabilities = new HashMap<Hypothesis, Double>();
         for (Hypothesis hypothesis : Hypothesis.values()) {
-            probabilities.put(hypothesis, getProbability(hypothesis, true));
+            probabilities.put(hypothesis, getProbability(hypothesis));
         }
         return probabilities;
     }
 
-    public double getProbability(Hypothesis hypothesis, boolean value) {
-        int valueIndex = getOutcomeId(hypothesis.name(), value);
+    public double getProbability(Hypothesis hypothesis) {
+        int valueIndex = getOutcomeId(HYPOTHESIS_NODE_NAME, hypothesis.name());
         if (valueIndex == -1) {
             throw new IllegalStateException("Could not find outcome id for " + hypothesis);
         }
-        double[] probabilities = network.getNodeValue(hypothesis.name());
+        double[] probabilities = network.getNodeValue(HYPOTHESIS_NODE_NAME);
         return probabilities[valueIndex];
     }
 
-    private int getOutcomeId(String nodeName, boolean value) {
-        String outcomeName = value ? TRUE_VALUE_MARKER : FALSE_VALUE_MARKER;
+    private int getOutcomeId(String nodeName, String hypothesisName) {
         int outcomeIndex;
         String[] outcomeIds = network.getOutcomeIds(nodeName);
         for (outcomeIndex = 0; outcomeIndex < outcomeIds.length; outcomeIndex++) {
-            if (outcomeName.equals(outcomeIds[outcomeIndex])) {
+            if (hypothesisName.equals(outcomeIds[outcomeIndex])) {
                 return outcomeIndex;
             }
         }
