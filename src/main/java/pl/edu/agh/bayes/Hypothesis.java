@@ -6,5 +6,6 @@ public enum Hypothesis {
     Zakopane,
     Rzeszow,
     Wroclaw,
-    Poznan
+    Poznan,
+    Inne
 }
