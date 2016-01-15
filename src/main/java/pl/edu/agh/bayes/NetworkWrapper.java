@@ -10,6 +10,7 @@ public class NetworkWrapper {
     private static final String TRUE_VALUE_MARKER = "Yes";
     private static final String FALSE_VALUE_MARKER = "No";
     private final Network network;
+    private NetworkRecalculationListener listener;
 
     public NetworkWrapper(String filename) {
         this.network = new Network();
@@ -19,6 +20,9 @@ public class NetworkWrapper {
 
     public void recalculate() {
         network.updateBeliefs();
+        if (listener != null) {
+            listener.onNetworkRecalculation();
+        }
     }
 
     public void setEvidence(Symptom symptom, boolean value) {
@@ -63,6 +67,10 @@ public class NetworkWrapper {
             }
         }
         return -1;
+    }
+
+    public void setListener(NetworkRecalculationListener listener) {
+        this.listener = listener;
     }
 
 }
