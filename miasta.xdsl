@@ -17,7 +17,7 @@
 			<parents>Gdzie_mieszkasz_</parents>
 			<probabilities>0.07389999999999999 0.9261 0.0324 0.9676 0.0011 0.9989 0.007900000000000001 0.9921 0.027 0.973 0.0232 0.9768 0.5 0.5</probabilities>
 		</cpt>
-		<cpt id="Komunikacja_zbiorowa">
+		<cpt id="Dojezdzasz_do_pracy_komunikacja_zbiorowa">
 			<state id="Yes" />
 			<state id="No" />
 			<parents>Mieszkasz_w_miescie</parents>
@@ -56,7 +56,7 @@
 		<cpt id="Czytasz_wiecej_niz_12_ksiazek_rocznie">
 			<state id="Yes" />
 			<state id="No" />
-			<parents>Komunikacja_zbiorowa</parents>
+			<parents>Dojezdzasz_do_pracy_komunikacja_zbiorowa</parents>
 			<probabilities>0.8 0.2 0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="Jezdzisz_w_gory_conajmniej_5_razy_w_roku">
@@ -105,7 +105,7 @@
 				<font color="000000" name="Arial" size="8" />
 				<position>568 395 660 443</position>
 			</node>
-			<node id="Komunikacja_zbiorowa">
+			<node id="Dojezdzasz_do_pracy_komunikacja_zbiorowa">
 				<name>Dojezdzasz do pracy komunikacja zbiorowa</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
